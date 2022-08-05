@@ -25,14 +25,25 @@
 
 .moviecard{
  background: blue;
+ display: flex;
+ flex-direction: column;
+ justify-content:center;
+ align-items: center;
 }
 .moviepost{
+    height: 100%;
     width: 100%;
+}
+.noimg{
+    height: 100%;
+    width: 100%;
+    background: #ffffff7c;
+    color: #090A0E;
+    text-align: center;
 }
 .movietitle{
     background: rgb(119, 119, 88);
 
-    
 }
 
 
