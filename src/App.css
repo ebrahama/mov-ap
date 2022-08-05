@@ -1,3 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ body{
+    background-color: #090A0E;
+    color: #ffffff;
+}
+
 .conta{
- background: red;
+    
+    max-width: 1300px;
+    margin: 0 auto;
+  /* background-color: #0f1014; */
+  background-color: red;
+  
+  padding: 80px 20px ;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+                    /* movie card section */
+
+.moviecard{
+ background: blue;
+}
+.moviepost{
+    width: 100%;
+}
+.movietitle{
+    background: rgb(119, 119, 88);
+
+    
+}
+
+
+
+
+
+                    /* responsive section */
+
+@media(max-width:400px){
+    .conta{
+ 
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        gap: 30px;
+      }
+
 }

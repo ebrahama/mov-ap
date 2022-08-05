@@ -6,12 +6,26 @@ import MovieCard from "./compon/MovieCard";
 
 function App() {
 
-const api = "https://api.themoviedb.org/3/discover/movie?api_key=47009c10eddb127f105f8aba2ad2688c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
-const [movies, setmovies] = useState( [])
+const url = "https://api.themoviedb.org/3"
+const api = "?api_key=47009c10eddb127f105f8aba2ad2688c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
+const types = "/discover/movie"
+//const types = "/movie/upcoming"
 
-const fetmov = async () => {
-  const {data: {results}} = await axios.get(`${api}`, {}) 
-  setmovies(results)
+
+const [movies, setmovies] = useState( [])
+const [searchkey, setsearchkey] = useState( "")
+
+
+const fetmov = async (searchkey) => {
+
+
+ 
+ const {data: {results}} = await axios.get(`${url}${types}${api}`, {
+
+ }) 
+ 
+ setmovies(results)
+  
 }
 
 
@@ -31,16 +45,35 @@ const rendermovie = () => (
    ))
 )
 
+const searchmovie = (e) => {
+  e.preventDefault() 
+  fetmov(searchkey)
+ }
+
+
+
 
   return (
     <div className="App">
 
-    <h2>hol</h2>
+    <header>
+       <h2>movies</h2>
+
+
+       <form onSubmit={searchmovie}>
+
+       <input type="text" onChange={(e) =>{setsearchkey(e.target.value)}}/>
+     
+       <button type={"submit"}>search</button>
+
+       </form>
+       
+    </header>
+
 
       <div className="conta">
       { rendermovie() }
       </div>
-
 
     </div>
   );
