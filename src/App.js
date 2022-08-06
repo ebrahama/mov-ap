@@ -6,12 +6,13 @@ import MovieCard from "./compon/MovieCard";
 
 function App() {
 
+const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280"
+
 const url = "https://api.themoviedb.org/3"
 const api = "?api_key=47009c10eddb127f105f8aba2ad2688c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
 
-
-
 const [movies, setmovies] = useState( [])
+const [selectmov, setselectmov] = useState( {})
 const [searchkey, setsearchkey] = useState( "")
 
 
@@ -25,7 +26,7 @@ const types = searchkey ? "/search" : "/discover"
             query: searchkey
            }
  }) 
- 
+ setselectmov(results[0])
  setmovies(results)
 }
 
@@ -58,9 +59,7 @@ const searchmovie = (e) => {
     <div className="App">
 
     <header>
-       <h2>movies</h2>
-
-
+       <span>movies</span>
        <form onSubmit={searchmovie}>
 
        <input type="text" onChange={(e) =>{setsearchkey(e.target.value)}}/>
@@ -70,6 +69,14 @@ const searchmovie = (e) => {
        </form>
        
     </header>
+
+    <div className="hero" style={{backgroundImage:`url('${IMAGE_PATH}${selectmov.backdrop_path}')`}}>
+      <div className="herocon">
+             <button>play trailer</button>
+              <h1>{selectmov.title}</h1>
+              {selectmov.overview ? <p>{selectmov.overview}</p> : null}
+      </div>
+    </div>
 
 
       <div className="conta">

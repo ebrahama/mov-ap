@@ -7,6 +7,10 @@
     background-color: #090A0E;
     color: #ffffff;
 }
+.App{
+    width: 100%;
+    position: relative;
+}
 
 .conta{
     
@@ -20,6 +24,22 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
 }
+
+                    /* hero section */
+.hero{
+    width: 95%;
+    height: 600px;
+    margin: 0 auto;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+.herocon{
+
+}
+
+
 
                     /* movie card section */
 
