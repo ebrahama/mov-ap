@@ -7,7 +7,7 @@ import YouTube from "react-youtube";
 
 function App() {
 
-const IMAGE_PATH = "https://image.tmdb.org/t/p/w780"
+const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280"
 
 const url = "https://api.themoviedb.org/3"
 //const api = "?api_key=47009c10eddb127f105f8aba2ad2688c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
@@ -42,8 +42,7 @@ const fmo = async (id) => {
 
   const selfmo = async (movie) => {
     const data = await fmo(movie.id)
-    console.log('movie data',data);
-    setselectmov(movie)
+    setselectmov(data)
    }
 
 
@@ -54,7 +53,6 @@ useEffect(() => {
 
 
 const rendermovie = () => (
-
    movies.map(movie => (
        <MovieCard
        key={movie.id}
@@ -69,7 +67,17 @@ const searchmovie = (e) => {
   fetmov(searchkey)
  }
 
+const Rendtr = () =>{
 
+  const tra = selectmov.videos.results.find(vid => vid.name === 'Official Trailer')
+
+  return (
+    <YouTube
+    videoId={tra.key}
+    />
+       )
+ 
+  }
 
 
   return (
@@ -90,9 +98,8 @@ const searchmovie = (e) => {
     <div className="hero" style={{backgroundImage:`url('${IMAGE_PATH}${selectmov.backdrop_path}')`}}>
       <div className="herocon">
 
-          <YouTube
-          
-          />
+            {selectmov.videos ? Rendtr() : null }
+
              <button>play trailer</button>
               <h1>{selectmov.title}</h1>
               {selectmov.overview ? <p>{selectmov.overview}</p> : null}

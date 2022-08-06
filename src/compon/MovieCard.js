@@ -3,7 +3,7 @@ import React from "react";
 const MovieCard = ({movie ,selectmov}) =>{
     
 
-    const IMAGE_PATH = "https://image.tmdb.org/t/p/w342"
+    const IMAGE_PATH = "https://image.tmdb.org/t/p/w300"
 
     return(
         <div className="moviecard" onClick={() =>{ selectmov(movie)}}>
