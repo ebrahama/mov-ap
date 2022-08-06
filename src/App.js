@@ -6,7 +6,7 @@ import MovieCard from "./compon/MovieCard";
 
 function App() {
 
-const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280"
+const IMAGE_PATH = "https://image.tmdb.org/t/p/w780"
 
 const url = "https://api.themoviedb.org/3"
 const api = "?api_key=47009c10eddb127f105f8aba2ad2688c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
@@ -43,6 +43,7 @@ const rendermovie = () => (
        <MovieCard
        key={movie.id}
        movie={movie}
+       selectmov={setselectmov}
        />
    ))
 )

@@ -10,6 +10,7 @@
 .App{
     width: 100%;
     position: relative;
+    margin: 0 auto;
 }
 
 .conta{
@@ -27,17 +28,15 @@
 
                     /* hero section */
 .hero{
-    width: 95%;
-    height: 600px;
+    width: 90%;
+    height:500px;
     margin: 0 auto;
-    background-size: cover;
+    background-size:cover;
     display: flex;
     align-items: flex-end;
     padding: 20px;
 }
-.herocon{
 
-}
 
 
 
