@@ -15,6 +15,8 @@ const url = "https://api.themoviedb.org/3"
 const [movies, setmovies] = useState( [])
 const [selectmov, setselectmov] = useState( {})
 const [searchkey, setsearchkey] = useState( "")
+const [playtr, setplaytr] = useState(false)
+
 
 
 const fetmov = async (searchkey) => {
@@ -26,7 +28,8 @@ const types = searchkey ? "/search" : "/discover"
             query: searchkey
            }
  }) 
- setselectmov(results[0])
+   selfmo(results[0])
+ //setselectmov(results[0])
  setmovies(results)
 }
 
@@ -41,6 +44,7 @@ const fmo = async (id) => {
   }
 
   const selfmo = async (movie) => {
+    setplaytr(false)
     const data = await fmo(movie.id)
     setselectmov(data)
    }
@@ -70,10 +74,11 @@ const searchmovie = (e) => {
 const Rendtr = () =>{
 
   const tra = selectmov.videos.results.find(vid => vid.name === 'Official Trailer')
+  const tr = tra ? tra.key : selectmov.videos.results[0].key
 
   return (
     <YouTube
-    videoId={tra.key}
+    videoId={tr}
     />
        )
  
@@ -98,9 +103,11 @@ const Rendtr = () =>{
     <div className="hero" style={{backgroundImage:`url('${IMAGE_PATH}${selectmov.backdrop_path}')`}}>
       <div className="herocon">
 
-            {selectmov.videos ? Rendtr() : null }
+            {selectmov.videos && playtr ? Rendtr() : null }
 
-             <button>play trailer</button>
+             <button onClick={() => setplaytr(true)}>play trailer</button>
+             <button>watch now</button>
+
               <h1>{selectmov.title}</h1>
               {selectmov.overview ? <p>{selectmov.overview}</p> : null}
       </div>
