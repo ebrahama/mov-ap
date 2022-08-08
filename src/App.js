@@ -71,6 +71,10 @@ const Rendtr = () =>{
     <YouTube
     className="ytb"
     videoId={tr}
+    opts={{
+      width:"400px",
+      height:"300px"
+    }}
     />
        )
   }

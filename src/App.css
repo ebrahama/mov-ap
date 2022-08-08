@@ -130,13 +130,7 @@
  flex-direction: column;
  justify-content:center;
 }
-.moviepost{
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    margin: 10px;
-}
-.noimg{
+.moviepost,.noimg{
     height: 100%;
     width: 100%;
     border-radius: 10px;
@@ -150,14 +144,144 @@
 
                     /* responsive section */
 
-@media(max-width:600px){
+@media(max-width:2700px){
+    .App{
+        max-width: 1900px;
+    }
     .conta{
         display: grid;
-        grid-template-columns:1fr 1fr 1fr 1fr;
-        gap: 5px;
-      }
-
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        }
 }
+@media(max-width:1440px){
+    .conta{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        }
+        .ov{
+            max-width: 450px;
+            font-size: 12px;
+        }
+        .moviecard3{
+            width: 200px;
+            right: 140px;
+            top: 50px;
+           }
+        .moviepost,.noimg{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            margin: 10px;
+            background: #2b2b2bb6;
+        }
+        .movietitle{
+           padding-left: 20px;
+           font-size:9px;
+        }
+}
+
+@media(max-width:916px){
+    .conta{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        }
+        .ti{
+            font-size:27px;
+        }
+        .ov{
+            max-width: 400px;
+            font-size: 10px;
+        }
+        .moviecard3{
+            width: 170px;
+            right: 70px;
+            top: 70px;
+           }
+        .moviepost,.noimg{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            margin: 10px;
+            background: #2b2b2bb6;
+        }
+        .movietitle{
+           padding-left: 20px;
+           font-size:9px;
+        }
+}
+@media(max-width:768px){
+    .ytb{
+        position: absolute;
+        top: 75px;
+        left: 0vw;
+    }
+    .hero{
+        width: 100%;
+        height:500px;
+        background-size:cover;
+        background-position: 50%;
+    }
+    .cal h2{
+        margin-left: 11px;
+    }
+   .jj, .jj p{
+        font-size: 11px;
+        margin-left: 0px;
+    }
+    .tr,.wn{
+        font-size: 10px; 
+        margin-right: 10px;
+        font-weight: 500;
+    }
+    header{ 
+        top: 30px;
+        left: 20px;
+     }
+     header button{
+       font-size: 10px;
+     }
+    .herocon{
+        padding: 120px 0px 0px 20px;
+        height: 340px;
+    }
+    .conta{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+        gap: 5px;
+        width: 90%;
+        margin: 5px;
+       }
+        .ti{
+            font-size:17px;
+        }
+        .ov{
+            max-width: 200px;
+            font-size: 6px;
+        }
+        .moviecard3{
+            width: 125px;
+            right: 15px;
+            top: 110px;
+           }
+        .moviepost,.noimg{
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            background: #2b2b2bb6;
+        }
+        .movietitle{
+           font-size:4px;
+        }
+}
+
+
+
+
+
+
 body::-webkit-scrollbar {
     width: 10px;
   }
