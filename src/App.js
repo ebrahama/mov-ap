@@ -4,6 +4,8 @@ import './App.css';
 import MovieCard from "./compon/MovieCard";
 import YouTube from "react-youtube";
 
+import More from "./compon/More";
+
 
 function App() {
 
@@ -79,7 +81,6 @@ const Rendtr = () =>{
        )
   }
 
-
   return (
     <div className="App">
 
@@ -121,9 +122,12 @@ const Rendtr = () =>{
       { rendermovie() }
       </div>
     </div>
-    
 
-    </div>
+
+      <More/>
+  
+
+  </div>
   );
 
 }
