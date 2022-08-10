@@ -78,8 +78,15 @@ const fmo = async (id) => {
     setplaytr(false)
     const data = await fmo(movie.id)
     setselectmov(data)
+    scro()
    }
 
+const scro = ()=> {
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  })
+}
 
 useEffect(() => {
   fetmov()
@@ -196,7 +203,6 @@ const Rendtr = () =>{
       <div className="contab"> 
       { rendermovib() }
       </div> 
-
  </div>
   </div>
   );
