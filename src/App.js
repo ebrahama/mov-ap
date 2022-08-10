@@ -1,10 +1,14 @@
 import {useEffect, useState} from "react";
 import axios from 'axios';
 import './App.css';
+
 import MovieCard from "./compon/MovieCard";
+import More from "./compon/More";
+import Mori from "./compon/Mori";
+
+
 import YouTube from "react-youtube";
 
-import More from "./compon/More";
 
 
 function App() {
@@ -13,6 +17,9 @@ const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280"
 const url = "https://api.themoviedb.org/3"
 
 const [movies, setmovies] = useState( [])
+const [movie, setmovie] = useState( [])
+const [movi, setmovi] = useState( [])
+
 const [selectmov, setselectmov] = useState( {})
 const [searchkey, setsearchkey] = useState( "")
 const [playtr, setplaytr] = useState(false)
@@ -30,6 +37,32 @@ const types = searchkey ? "/search" : "/discover"
   setmovies(results)
 }
 
+const fetmo = async () => {
+  //const types = "/tv/popular"
+    const types = "/movie/top_rated"
+
+   const {data: {results}} = await axios.get(`${url}${types}`, {
+             params:{
+              api_key: process.env.REACT_APP_MOVE_API,
+             }
+   })
+   setmovie(results)
+  }
+
+const fetm = async () => {
+  const types = "/tv/popular"
+   // const types = "/movie/top_rated"
+
+    const {data: {results}} = await axios.get(`${url}${types}`, {
+              params:{
+              api_key: process.env.REACT_APP_MOVE_API,
+              }
+    })
+    setmovi(results)
+  }
+
+
+ 
 const fmo = async (id) => {
    const {data} = await axios.get(`${url}/movie/${id}`, {
           params:{
@@ -47,9 +80,13 @@ const fmo = async (id) => {
     setselectmov(data)
    }
 
+
 useEffect(() => {
   fetmov()
+  fetmo()
+  fetm()
 }, [])
+
 
 const rendermovie = () => (
    movies.map(movie => (
@@ -60,6 +97,27 @@ const rendermovie = () => (
        />
    ))
 )
+
+const rendermovi = () => (
+  movie.map(movie => (
+      <More
+      key={movie.id}
+      movie={movie}
+      selectmov={selfmo}
+      />
+  ))
+)
+
+const rendermovib = () => (
+  movi.map(movie => (
+      <Mori
+      key={movie.id}
+      movie={movie}
+      selectmov={selfmo}
+      />
+  ))
+)
+
 
 const searchmovie = (e) => {
   e.preventDefault() 
@@ -124,9 +182,22 @@ const Rendtr = () =>{
     </div>
 
 
-      <More/>
-  
 
+      <div className="b">
+      <h2>Top rated</h2>
+      <div className="contab"> 
+      { rendermovi() }
+      </div> 
+
+       </div>
+  
+       <div className="b">
+       <h2>tv popular</h2>
+      <div className="contab"> 
+      { rendermovib() }
+      </div> 
+
+ </div>
   </div>
   );
 

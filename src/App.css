@@ -22,14 +22,36 @@
 
 .cal{
     background: rgb(0, 0, 0);
+    margin-bottom: 40px;
 }
-.cal h2{
+.cal h2,.b h2{
     border-left: 5px solid rgb(37, 37, 37);
     padding-left: 10px;
     margin-left: 35px;
     margin-bottom: 10px;
 }
 
+.b{
+    margin: 0px auto;
+    width: 88vw ;
+    margin-bottom: 20px;
+}
+  .contab{
+    display: flex;
+    overflow-y: scroll;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.022);
+    border-radius: 10px;
+    max-width: 1810px;
+}
+.moviecar{
+    margin-left: 20px;
+    margin: 10px;
+}
+.moviepos,.noim{
+  width: 160px;
+  border-radius: 10px;
+}
                     /* hero section + header*/
  header{
     position: absolute;
@@ -121,7 +143,7 @@
     margin: 0px auto;
     background-color: rgba(0, 0, 0, 0.656);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
 }
 
@@ -213,6 +235,18 @@
         }
 }
 @media(max-width:768px){
+    .moviecar{
+        margin: 5px;
+    }
+    .moviepos,.noim{
+        width: 70px;
+    }
+      .b{
+        margin: 0;
+        margin-top: 10px;
+        font-size: 10px;
+        width: 100vw;
+      }
     .ytb{
         position: absolute;
         top: 75px;
