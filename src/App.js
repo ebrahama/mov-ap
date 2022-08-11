@@ -6,6 +6,7 @@ import MovieCard from "./compon/MovieCard";
 import More from "./compon/More";
 import Mori from "./compon/Mori";
 
+import lod from "./compon/1490.gif";
 
 import YouTube from "react-youtube";
 
@@ -24,6 +25,10 @@ const [selectmov, setselectmov] = useState( {})
 const [searchkey, setsearchkey] = useState( "")
 const [playtr, setplaytr] = useState(false)
 
+const [load, setload] = useState(false)
+
+
+
 const fetmov = async (searchkey) => {
 const types = searchkey ? "/search" : "/discover"
 //const types = "/movie/upcoming"
@@ -38,15 +43,13 @@ const types = searchkey ? "/search" : "/discover"
 }
 
 const fetmo = async () => {
-  //const types = "/tv/popular"
     const types = "/movie/top_rated"
-
-   const {data: {results}} = await axios.get(`${url}${types}`, {
+    const {data: {results}} = await axios.get(`${url}${types}`, {
              params:{
               api_key: process.env.REACT_APP_MOVE_API,
              }
    })
-   setmovie(results)
+   setmovie(results) 
   }
 
 const fetm = async () => {
@@ -89,6 +92,10 @@ const scro = ()=> {
 }
 
 useEffect(() => {
+  setload(true)
+  setTimeout(()=> {
+    setload(false)
+  }, 3500)
   fetmov()
   fetmo()
   fetm()
@@ -148,6 +155,9 @@ const Rendtr = () =>{
 
   return (
     <div className="App">
+    {load ? <div className="loda"><img src={lod} alt="loading..." /></div> 
+     : null}
+    
 
     <header>
        <form onSubmit={searchmovie}>
@@ -204,7 +214,13 @@ const Rendtr = () =>{
       { rendermovib() }
       </div> 
  </div>
+ 
+
+
   </div>
+
+
+
   );
 
 }
