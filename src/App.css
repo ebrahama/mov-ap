@@ -22,7 +22,24 @@
     position: relative;
     margin: 0 auto;
 }
-
+.bom{
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.536);
+    border: 3px solid rgba(255, 0, 0, 0.723);
+    border-radius: 40px;
+    text-decoration: none;
+    margin: 5px;
+}
+.btt{
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.536);
+    border: 3px solid rgba(255, 255, 255, 0.723);
+    border-radius: 40px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
 .ytb{
     position: absolute;
     top: 20px;
@@ -70,6 +87,7 @@
     background: rgba(255, 255, 255, 0.87);
     border-radius: 10px;
     padding: 0px 4px 3px 4px;
+    max-width: 230px;
  }
  header input{
     background: transparent;
@@ -288,7 +306,7 @@
        font-size: 10px;
      }
     .herocon{
-        padding: 120px 0px 0px 20px;
+        padding: 70px 0px 0px 20px;
         height: 340px;
     }
     .conta{
@@ -307,7 +325,7 @@
         .moviecard3{
             width: 120px;
             right: 12px;
-            top: 105px;
+            top: 90px;
            }
         .moviepost,.noimg{
             height: 100%;
