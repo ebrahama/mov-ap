@@ -27,6 +27,13 @@ const [playtr, setplaytr] = useState(false)
 
 const [load, setload] = useState(false)
 
+useEffect(() => {
+  setload(true)
+  setTimeout(()=> {
+    setload(false)
+  }, 3000)
+}, [])
+
 
 
 const fetmov = async (searchkey) => {
@@ -92,10 +99,6 @@ const scro = ()=> {
 }
 
 useEffect(() => {
-  setload(true)
-  setTimeout(()=> {
-    setload(false)
-  }, 3500)
   fetmov()
   fetmo()
   fetm()
