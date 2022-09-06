@@ -48,7 +48,7 @@ const fetmo = async () => {
     const types = "/movie/top_rated"
     const {data: {results}} = await axios.get(`${url}${types}`, {
              params:{
-              api_key: process.env.REACT_APP_MOVE_API,
+              api_key: b,
              }
    })
    setmovie(results) 
@@ -69,7 +69,7 @@ const fetm = async () => {
 const fmo = async (id) => {
    const {data} = await axios.get(`${url}/movie/${id}`, {
           params:{
-            api_key: process.env.REACT_APP_MOVE_API,
+            api_key: b,
             append_to_response: 'videos'
           }
    }) 

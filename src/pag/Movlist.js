@@ -47,7 +47,7 @@ const searchmovie = (e) => {
    const {data: {results}} = await axios.get(`${url}${types}/movie`, {
              params:{
               page : page ,
-              api_key: process.env.REACT_APP_MOVE_API,
+              api_key: b,
               query: searchkey
              }
    })
