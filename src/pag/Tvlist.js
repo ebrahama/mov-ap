@@ -12,12 +12,13 @@ const [searchkey, setsearchkey] = useState( "")
 
 const [page , setpage] = useState(1);
 
+const b = "47009c10eddb127f105f8aba2ad2688c"
 
 const fetmov = async (searchkey) => {
 const types = searchkey ? "/search/tv" : "/tv/popular"
  const {data: {results}} = await axios.get(`${url}${types}`, {
            params:{
-            api_key: process.env.REACT_APP_MOVE_API,
+            api_key: b,
             query: searchkey
            }
  })

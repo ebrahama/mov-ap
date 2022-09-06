@@ -11,13 +11,14 @@ const [movies, setmovies] = useState( [])
 const [searchkey, setsearchkey] = useState( "")
 
 const [page , setpage] = useState(1);
+const b = "47009c10eddb127f105f8aba2ad2688c"
 
 const fetmov = async (searchkey) => {
   const types = searchkey ? "/search" : "/discover"
    const {data: {results}} = await axios.get(`${url}${types}/movie`, {
              params:{
               page : page ,
-              api_key: process.env.REACT_APP_MOVE_API,
+              api_key: b,
               query: searchkey
              }
    })

@@ -21,14 +21,14 @@ const [searchkey, setsearchkey] = useState( "")
 const [playtr, setplaytr] = useState(false)
 
 const [load, setload] = useState(false)
+useEffect(() => {
+  setload(true)
+  setTimeout(()=> {
+    setload(false)
+  }, 3000)
+}, [])
 
-// useEffect(() => {
-//   setload(true)
-//   setTimeout(()=> {
-//     setload(false)
-//   }, 3000)
-// }, [])
-
+ const b = "47009c10eddb127f105f8aba2ad2688c"
 
 
 const fetmov = async (searchkey) => {
@@ -36,7 +36,7 @@ const types = searchkey ? "/search" : "/discover"
 //const types = "/movie/upcoming"
  const {data: {results}} = await axios.get(`${url}${types}/movie`, {
            params:{
-            api_key: process.env.REACT_APP_MOVE_API,
+            api_key: b,
             query: searchkey
            }
  })
@@ -85,10 +85,10 @@ const fmo = async (id) => {
    }
 
 const scro = ()=> {
-//   window.scrollTo({
-//     top:0,
-//     behavior:'smooth'
-//   })
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  })
 }
 
 useEffect(() => {
