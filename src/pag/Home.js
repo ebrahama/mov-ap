@@ -60,7 +60,7 @@ const fetm = async () => {
 
     const {data: {results}} = await axios.get(`${url}${types}`, {
               params:{
-              api_key: process.env.REACT_APP_MOVE_API,
+              api_key: b,
               }
     })
     setmovi(results)
@@ -155,9 +155,6 @@ const Rendtr = () =>{
     {load ? <div className="loda"><img src={lod} alt="loading..." /></div> 
      : null}
     
-
-   
-
     {/* <header>
        <form onSubmit={searchmovie}>
        <input type="text" onChange={(e) =>{setsearchkey(e.target.value)}}/>

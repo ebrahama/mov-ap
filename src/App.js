@@ -2,7 +2,6 @@ import{Routes,Route} from "react-router-dom"
 import Home from "./pag/Home"
 import Movlist from "./pag/Movlist";
 import Tvlist from "./pag/Tvlist"
-
 import './App.css';
 
 function App(){
