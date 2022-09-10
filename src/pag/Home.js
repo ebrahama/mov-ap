@@ -22,12 +22,12 @@ const [searchkey, setsearchkey] = useState( "")
 const [playtr, setplaytr] = useState(false)
 
 const [load, setload] = useState(false)
-// useEffect(() => {
-//   setload(true)
-//   setTimeout(()=> {
-//     setload(false)
-//   }, 3000)
-// }, [])
+useEffect(() => {
+  setload(true)
+  setTimeout(()=> {
+    setload(false)
+  }, 3000)
+}, [])
 
  const b = "47009c10eddb127f105f8aba2ad2688c"
 
