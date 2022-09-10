@@ -1,5 +1,6 @@
 import React from "react";
 import {useEffect, useState} from "react";
+import{Link } from "react-router-dom"
 import axios from 'axios';
 import MovieCard from "../compon/MovieCard";
 
@@ -25,18 +26,6 @@ const types = searchkey ? "/search/tv" : "/tv/popular"
   setmovies(results)
 }
 
-// const fetmov = async (searchkey) => {
-//   const types = searchkey ? "/search" : "/discover"
-//    const {data: {results}} = await axios.get(`${url}${types}/movie`, {
-//              params:{
-//               api_key: process.env.REACT_APP_MOVE_API,
-//               query: searchkey
-//              }
-//    })
-//     setmovies(results)
-//   }
-
-
 
 useEffect(() => {
   fetmov()
@@ -56,6 +45,7 @@ const searchmovie = (e) => {
   e.preventDefault() 
   fetmov(searchkey)
  }
+
  const morem = async () => {
   setpage(page + 1)
   const types = "/tv/popular"
@@ -73,7 +63,9 @@ const searchmovie = (e) => {
   return (
     <>
     <div className="App">
-   
+
+    <Link to="/"><img src="https://img.icons8.com/ios/35/FA5252/circled-left-2.png"/></Link>
+
     <header style={{top:7 , right:5 , left:"inherit"}}>
        <form onSubmit={searchmovie}>
        <input type="text" onChange={(e) =>{setsearchkey(e.target.value)}}/>
@@ -87,6 +79,7 @@ const searchmovie = (e) => {
       { rendermovie() }
       </div>
     </div>
+
    {!searchkey ? (<button className="btt" onClick={morem}>load more</button>):(<></>)}
   </div>
 </>

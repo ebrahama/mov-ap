@@ -1,5 +1,6 @@
 import React from "react";
 import {useEffect, useState} from "react";
+import{Link } from "react-router-dom"
 import axios from 'axios';
 import MovieCard from "../compon/MovieCard";
 import More from "../compon/More";
@@ -21,12 +22,12 @@ const [searchkey, setsearchkey] = useState( "")
 const [playtr, setplaytr] = useState(false)
 
 const [load, setload] = useState(false)
-useEffect(() => {
-  setload(true)
-  setTimeout(()=> {
-    setload(false)
-  }, 3000)
-}, [])
+// useEffect(() => {
+//   setload(true)
+//   setTimeout(()=> {
+//     setload(false)
+//   }, 3000)
+// }, [])
 
  const b = "47009c10eddb127f105f8aba2ad2688c"
 
@@ -161,11 +162,13 @@ const Rendtr = () =>{
        <button type={"submit"}>search</button>
        </form>
     </header> */}
- {/* <div style={{position:"absolute" ,top:15,left:20}}>  
-    <a href="/move" className="bom">movies</a>
-    <a href="/tv" className="bom">tv show</a>
-    </div> */}
-
+ 
+   <div style={{position:"absolute" ,top:15,left:20 ,zIndex:9999}}>
+    <Link className="boo" to="/">HOME</Link>
+    <Link className="bom" to="/move">MOVIE</Link>
+    <Link className="bom" to="/tv">TV</Link>
+   </div>
+   
     <div> 
       <img className="hero" style={{backgroundImage:`url('${IMAGE_PATH}${selectmov.backdrop_path}')`}}></img>
       <div className="herocon">
@@ -180,17 +183,13 @@ const Rendtr = () =>{
              <button className="wn">watch now</button>
              <button className="tr" onClick={() => setplaytr(true)}>trailer</button> 
         
-     <div className="moviecard3">
+          <div className="moviecard3">
       {selectmov.poster_path ? <img className="moviepost3" src={`${IMAGE_PATH}${selectmov.poster_path}`}></img>
       :<div className="noimg3"></div>
       } 
-    </div>
-
-
-
+          </div>
       </div>
     </div>
-
 
      <div className="cal">
       <h2>Popular</h2>

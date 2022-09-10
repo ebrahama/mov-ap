@@ -1,4 +1,5 @@
 import React from "react";
+import{Link } from "react-router-dom"
 import {useEffect, useState} from "react";
 import axios from 'axios';
 import MovieCard from "../compon/MovieCard";
@@ -24,6 +25,7 @@ const fetmov = async (searchkey) => {
    })
     setmovies(results)
   }
+  
 useEffect(() => {
   fetmov()
 },[])
@@ -36,6 +38,7 @@ const rendermovie = () => (
        />
    ))
 )
+
 const searchmovie = (e) => {
   e.preventDefault() 
   fetmov(searchkey)
@@ -54,12 +57,12 @@ const searchmovie = (e) => {
     setmovies(results)
   }
 
-
-
   return (
     <>
     <div className="App">
-   
+
+    <Link to="/"><img src="https://img.icons8.com/ios/35/FA5252/circled-left-2.png"/></Link>
+
     <header style={{top:7 , right:5 , left:"inherit"}}>
        <form onSubmit={searchmovie}>
        <input type="text" onChange={(e) =>{setsearchkey(e.target.value)}}/>
@@ -74,7 +77,6 @@ const searchmovie = (e) => {
       </div>
       {!searchkey ? (<button  className="btt" onClick={morem}>load more</button>):(<></>)}
     </div>
-
   </div>
 </>
   );
