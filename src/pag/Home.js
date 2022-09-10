@@ -131,8 +131,8 @@ const rendermovib = () => (
 
 
 const searchmovie = (e) => {
-  e.preventDefault() 
-  fetmov(searchkey)
+  // e.preventDefault() 
+  // fetmov(searchkey)
  }
 
 const Rendtr = () =>{
@@ -149,7 +149,7 @@ const Rendtr = () =>{
     />
        )
   }
-
+console.log(selectmov.backdrop_path)
   return (
     <>
     <div className="App">
