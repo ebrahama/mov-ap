@@ -161,10 +161,10 @@ const Rendtr = () =>{
        <button type={"submit"}>search</button>
        </form>
     </header> */}
- <div style={{position:"absolute" ,top:15,left:20}}>  
+ {/* <div style={{position:"absolute" ,top:15,left:20}}>  
     <a href="/move" className="bom">movies</a>
     <a href="/tv" className="bom">tv show</a>
-    </div>
+    </div> */}
 
     <div> 
       <img className="hero" style={{backgroundImage:`url('${IMAGE_PATH}${selectmov.backdrop_path}')`}}></img>
