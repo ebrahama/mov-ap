@@ -149,7 +149,6 @@ const Rendtr = () =>{
     />
        )
   }
-console.log(selectmov.backdrop_path)
   return (
     <>
     <div className="App">
@@ -189,6 +188,7 @@ console.log(selectmov.backdrop_path)
       } 
           </div>
       </div>
+      
     </div>
 
      <div className="cal">
